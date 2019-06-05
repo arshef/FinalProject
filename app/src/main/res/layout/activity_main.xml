@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grad"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -14,6 +15,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/creditcard"
+        android:backgroundTint="@color/dollar"
         app:layout_constraintBottom_toTopOf="@id/bill_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,6 +26,7 @@
         android:layout_width="95dp"
         android:layout_height="110dp"
         android:background="@drawable/bill"
+        android:backgroundTint="@color/dollar"
         app:layout_constraintBottom_toTopOf="@id/news_btn"
         app:layout_constraintLeft_toLeftOf="@id/creditcard_btn"
         app:layout_constraintRight_toRightOf="@id/creditcard_btn"
@@ -34,6 +37,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/newspaper_420020"
+        android:backgroundTint="@color/dollar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/creditcard_btn"
         app:layout_constraintRight_toRightOf="@id/creditcard_btn"
