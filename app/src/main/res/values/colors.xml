@@ -5,4 +5,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="appTheme">#F0E68C</color>
     <color name="dollar">#85bb65</color>
+    <color name="blue">#5490ff</color>
+    <color name="goldenrod">#DAA520</color>
+    <color name="khaki">#F0E68C</color>
+    <color name="gold">#FFD700</color>
 </resources>
