@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.arshef.finalproject.Models.User;
 import org.arshef.finalproject.R;
+import org.arshef.finalproject.Tools.StaticTools;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,6 +44,31 @@ public class LoginActivity extends AppCompatActivity {
         }
         final EditText password = findViewById(R.id.password);
         Button loginBtn = findViewById(R.id.login_btn);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Username = username.getText().toString();
+                String Password = password.getText().toString();
+                if (StaticTools.Authenticate(Username)) {
+                    if (Authorize(Username, Password)) {
+                        isLoggedIn = true;
+                        user = Username;
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        StaticTools.ToastMaker(LoginActivity.this, "Password is incorrect!");
+                    }
+                } else {
+                    StaticTools.ToastMaker(LoginActivity.this, "User is not available!");
+                }
+            }
+        });
     }
 
+    private boolean Authorize(String username, String password) {
+        if (User.find(User.class, "Username = ? and Password = ?", username, password).size() > 0) {
+            return true;
+        }
+        return false;
+    }
 }
