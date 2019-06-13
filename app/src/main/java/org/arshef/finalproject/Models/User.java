@@ -5,4 +5,7 @@ import com.orm.SugarRecord;
 public class User extends SugarRecord {
     String username;
     String password;
+
+    public User() {
+    }
 }
