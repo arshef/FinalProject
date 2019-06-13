@@ -28,9 +28,26 @@ public class MainActivity extends AppCompatActivity {
         SugarContext.init(getApplicationContext());
         SugarDb db = new SugarDb(this);
         db.onCreate(db.getDB());
-        double[][] table = getTable();
-//        Do();
+//        double[][] table = getTable();
+//        double[][] row = getUserRating();
+//        double[][] vals = {{2, 0, 2, 4, 5, 0}, {5, 0, 4, 0, 0, 1}, {0, 0, 5, 0, 2, 0}, {0, 1, 0, 5, 0, 4}, {0, 0, 4, 0, 0, 2}, {4, 5, 0, 1, 0, 0}};
+//        double[][] doubles = {{2.5, 3, 1, 4, 2.5}};
+//        calculate(vals, doubles);
+//        double[] results = getSvd();
+    }
 
+    private double[] getSvd(User user) {
+        return calculate(getTable(), getUserRating(user));
+    }
+
+    private double[][] getUserRating(User user) {
+        double[][] doubles = new double[1][];
+        List<Rating> ratings = Rating.listAll(Rating.class);
+        List<News> news = News.listAll(News.class);
+        for (int i = 0; i < news.size(); i++) {
+            doubles[0][i] = findUserRate(user, news.get(i), ratings, 2.5);
+        }
+        return doubles;
     }
 
     private double[][] getTable() {
@@ -40,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
         double[][] doubles = new double[users.size()][];
         for (int j = 0; j < users.size(); j++) {
             for (int i = 0; i < news.size(); i++) {
-                doubles[j][i] = findUserRate(users.get(j), news.get(i), ratings);
+                doubles[j][i] = findUserRate(users.get(j), news.get(i), ratings, 0);
             }
         }
         return doubles;
     }
 
-    private int findUserRate(User user, News news, List<Rating> ratings) {
+    private double findUserRate(User user, News news, List<Rating> ratings, double defaultValue) {
         Rating rate = null;
         for (Rating rating :
                 ratings) {
@@ -57,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
         if (rate != null)
             return rate.getRate();
         else
-            return 0;
+            return defaultValue;
     }
 
-    private void Do(double[][] vals, double[][] rate) {
+    private double[] calculate(double[][] vals, double[][] rate) {
 //        int M = 8, N = 5;
 //        double[][] vals = {{2, 0, 2, 4, 5, 0}, {5, 0, 4, 0, 0, 1}, {0, 0, 5, 0, 2, 0}, {0, 1, 0, 5, 0, 4}, {0, 0, 4, 0, 0, 2}, {4, 5, 0, 1, 0, 0}};
         Matrix A = new Matrix(vals);
@@ -94,5 +111,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.print("singular values = ");
         Matrix svalues = new Matrix(s.getSingularValues(), 1);
         svalues.print(9, 6);
+        double[][] temp = matrix.getArray();
+        return temp[0];
     }
 }
