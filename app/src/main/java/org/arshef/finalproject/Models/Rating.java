@@ -9,4 +9,16 @@ public class Rating extends SugarRecord {
 
     public Rating() {
     }
+
+    public News getNews() {
+        return news;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

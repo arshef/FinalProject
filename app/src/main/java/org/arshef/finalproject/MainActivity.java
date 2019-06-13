@@ -7,11 +7,17 @@ import android.util.Log;
 import com.orm.SugarContext;
 import com.orm.SugarDb;
 
+import org.arshef.finalproject.Models.News;
+import org.arshef.finalproject.Models.Rating;
+import org.arshef.finalproject.Models.User;
+
 import java.util.HashMap;
 import java.util.List;
 
 import Jama.Matrix;
 import Jama.SingularValueDecomposition;
+
+import static com.orm.SugarRecord.listAll;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +34,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private double[][] getTable() {
+        List<User> users = User.listAll(User.class);
+        List<Rating> ratings = Rating.listAll(Rating.class);
+        List<News> news = News.listAll(News.class);
+        double[][] doubles = null;
+        for (int i = 0; i < users.size(); i++) {
+            int rate = findUserRate(users.get(i), ratings);
 
+        }
         return new double[0][];
+    }
+
+    private int findUserRate(User user, List<Rating> ratings) {
+        Rating rate = null;
+        for (Rating rating :
+                ratings) {
+            if (rating.getUser().equals(user)) {
+                rate = rating;
+            }
+        }
+        if (rate != null)
+            return rate.getRate();
+        else
+            return 0;
     }
 
     private void Do(double[][] vals, double[][] rate) {
