@@ -1,4 +1,4 @@
-package org.arshef.finalproject;
+package org.arshef.finalproject.Activities;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.arshef.finalproject.Tools.StaticTools;
+import org.arshef.finalproject.R;
 
 public class LoginActivity extends AppCompatActivity {
 

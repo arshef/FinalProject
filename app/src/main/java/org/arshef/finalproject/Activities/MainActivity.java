@@ -1,4 +1,4 @@
-package org.arshef.finalproject;
+package org.arshef.finalproject.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.orm.SugarDb;
 import org.arshef.finalproject.Models.News;
 import org.arshef.finalproject.Models.Rating;
 import org.arshef.finalproject.Models.User;
+import org.arshef.finalproject.R;
 
 import java.util.HashMap;
 import java.util.List;
@@ -89,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
         Matrix U = s.getU().getMatrix(0, 4, 0, 4);
         U.print(9, 6);
         Matrix ut = U.transpose();
-        Log.e("", "*******************************");
-        ut.print(9, 6);
+//        Log.e("", "*******************************");
+//        ut.print(9, 6);
         Matrix r = ut.times(U);
-        Log.e("", "*******************************");
-        r.print(9, 6);
-        Log.e("", "*******************************");
+//        Log.e("", "*******************************");
+//        r.print(9, 6);
+//        Log.e("", "*******************************");
 //        double[][] doubles = {{2.5, 3, 1, 4, 2.5}};
         Matrix n = new Matrix(rate);
         Matrix matrix = r.times(n.transpose()).transpose();
@@ -105,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < row.length; i++) {
             hashMap.put(i, row[i]);
         }
-        Log.e("", "rank = " + s.rank());
-        Log.e("", "condition number = " + s.cond());
-        Log.e("", "2-norm = " + s.norm2());
-        System.out.print("singular values = ");
+//        Log.e("", "rank = " + s.rank());
+//        Log.e("", "condition number = " + s.cond());
+//        Log.e("", "2-norm = " + s.norm2());
+//        System.out.print("singular values = ");
         Matrix svalues = new Matrix(s.getSingularValues(), 1);
         svalues.print(9, 6);
         double[][] temp = matrix.getArray();
