@@ -37,19 +37,20 @@ public class MainActivity extends AppCompatActivity {
         List<User> users = User.listAll(User.class);
         List<Rating> ratings = Rating.listAll(Rating.class);
         List<News> news = News.listAll(News.class);
-        double[][] doubles = null;
-        for (int i = 0; i < users.size(); i++) {
-            int rate = findUserRate(users.get(i), ratings);
-
+        double[][] doubles = new double[users.size()][];
+        for (int j = 0; j < users.size(); j++) {
+            for (int i = 0; i < news.size(); i++) {
+                doubles[j][i] = findUserRate(users.get(j), news.get(i), ratings);
+            }
         }
-        return new double[0][];
+        return doubles;
     }
 
-    private int findUserRate(User user, List<Rating> ratings) {
+    private int findUserRate(User user, News news, List<Rating> ratings) {
         Rating rate = null;
         for (Rating rating :
                 ratings) {
-            if (rating.getUser().equals(user)) {
+            if (rating.getUser().equals(user) && rating.getNews().equals(news)) {
                 rate = rating;
             }
         }
