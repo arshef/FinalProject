@@ -8,7 +8,7 @@
     tools:context=".Activities.MainActivity">
 
     <ImageButton
-        android:id="@+id/creditcard_btn"
+        android:id="@+id/transfer_btn"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginLeft="7dp"
@@ -30,9 +30,9 @@
         android:backgroundTint="@color/dollar"
         app:layout_constraintBottom_toTopOf="@id/news_btn"
         app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintLeft_toLeftOf="@id/creditcard_btn"
-        app:layout_constraintRight_toRightOf="@id/creditcard_btn"
-        app:layout_constraintTop_toBottomOf="@id/creditcard_btn" />
+        app:layout_constraintLeft_toLeftOf="@id/transfer_btn"
+        app:layout_constraintRight_toRightOf="@id/transfer_btn"
+        app:layout_constraintTop_toBottomOf="@id/transfer_btn" />
 
     <ImageButton
         android:id="@+id/news_btn"
@@ -43,8 +43,8 @@
         android:backgroundTint="@color/dollar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintLeft_toLeftOf="@id/creditcard_btn"
-        app:layout_constraintRight_toRightOf="@id/creditcard_btn"
+        app:layout_constraintLeft_toLeftOf="@id/transfer_btn"
+        app:layout_constraintRight_toRightOf="@id/transfer_btn"
         app:layout_constraintTop_toBottomOf="@id/bill_btn" />
 
     <ImageButton
@@ -55,11 +55,11 @@
         android:layout_marginTop="200dp"
         android:background="@drawable/simcard"
         android:backgroundTint="@color/dollar"
-        app:layout_constraintBottom_toBottomOf="@+id/creditcard_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/transfer_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toEndOf="@+id/creditcard_btn"
-        app:layout_constraintTop_toTopOf="@+id/creditcard_btn"
+        app:layout_constraintStart_toEndOf="@+id/transfer_btn"
+        app:layout_constraintTop_toTopOf="@+id/transfer_btn"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton

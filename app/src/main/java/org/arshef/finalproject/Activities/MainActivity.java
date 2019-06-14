@@ -1,8 +1,11 @@
 package org.arshef.finalproject.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.orm.SugarContext;
 import com.orm.SugarDb;
@@ -12,6 +15,7 @@ import org.arshef.finalproject.Models.Rating;
 import org.arshef.finalproject.Models.Suggestion;
 import org.arshef.finalproject.Models.User;
 import org.arshef.finalproject.R;
+import org.arshef.finalproject.Tools.StaticTools;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,15 +30,74 @@ import static com.orm.SugarRecord.listAll;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton newsBtn, transferBtn, billBtn, simBtn, mapBtn, chatBtn;
+
+    @Override
+    public void onBackPressed() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        newsBtn = findViewById(R.id.news_btn);
+        transferBtn = findViewById(R.id.transfer_btn);
+        billBtn = findViewById(R.id.bill_btn);
+        simBtn = findViewById(R.id.simcard_btn);
+        mapBtn = findViewById(R.id.map_btn);
+        chatBtn = findViewById(R.id.chat_btn);
         SugarContext.init(getApplicationContext());
         SugarDb db = new SugarDb(this);
         db.onCreate(db.getDB());
         test();
 
+        newsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        transferBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TransferActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        billBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BillActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        simBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SimcardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mapBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        chatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ChattingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
