@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad">
+
+
+    <EditText
+        android:id="@+id/origin_cardnum"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Origin card number"
+        android:inputType="number"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+
+        android:id="@+id/accountpass"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/origin_cardnum" />
+
+    <EditText
+        android:id="@+id/destinationacc"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Destination account"
+        android:inputType="number"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountpass" />
+
+
+    <EditText
+        android:id="@+id/transferamount"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Amount of transfer"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/destinationacc" />
+
+
+    <Button
+        android:id="@+id/confirmtransfer"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/goldenrod"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="@+id/transferamount"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/transferamount"
+        app:layout_constraintTop_toBottomOf="@+id/transferamount"
+        android:layout_marginTop="55dp"/>
+
+</android.support.constraint.ConstraintLayout>
