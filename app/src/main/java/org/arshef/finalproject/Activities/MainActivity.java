@@ -17,6 +17,7 @@ import org.arshef.finalproject.Models.Rating;
 import org.arshef.finalproject.Models.Suggestion;
 import org.arshef.finalproject.Models.User;
 import org.arshef.finalproject.R;
+import org.arshef.finalproject.Tools.StaticTools;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         if(!LoginActivity.isLoggedIn){
             Intent myintent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(myintent);
+        }
+
+        if(TransferActivity.was_successful) {
+            StaticTools.ToastMaker(MainActivity.this, "Transaction successful!");
         }
 
         setContentView(R.layout.activity_main);
