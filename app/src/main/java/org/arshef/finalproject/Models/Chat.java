@@ -47,6 +47,7 @@ public class Chat extends SugarRecord {
         for (SingleChat s :
                 strings) {
             String string = String.format("%s**%s", s.user.Username, s.message);
+            temp = string + temp + "/";
         }
         storedStrings = temp;
         Chat.save(this);
