@@ -19,6 +19,7 @@ public class SimLevelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simres);
         mytxt = findViewById(R.id.sim_money);
         mytxt.setText(SimcardActivity.nahayi);
+        Back = findViewById(R.id.sim_back);
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
