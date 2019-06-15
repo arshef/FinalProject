@@ -12,14 +12,14 @@
         android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="95dp"
         android:ems="10"
         android:hint="Origin card number"
         android:inputType="number"
         android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,6 +66,7 @@
         android:ems="10"
         android:hint="Amount of transfer"
         android:inputType="number"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/destinationacc" />

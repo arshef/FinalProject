@@ -20,6 +20,5 @@ public class TransferActivity extends AppCompatActivity {
         amount = findViewById(R.id.transferamount);
 
 
-
     }
 }

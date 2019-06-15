@@ -1,4 +1,6 @@
 package org.arshef.finalproject.Activities;
 
-public class SimcardActivity {
+import android.support.v7.app.AppCompatActivity;
+
+public class SimcardActivity extends AppCompatActivity {
 }

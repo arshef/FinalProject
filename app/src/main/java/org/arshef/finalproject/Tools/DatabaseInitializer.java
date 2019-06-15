@@ -1,4 +1,4 @@
-package org.arshef.finalproject;
+package org.arshef.finalproject.Tools;
 
 import org.arshef.finalproject.Models.BankAccount;
 import org.arshef.finalproject.Models.Sim;

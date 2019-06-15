@@ -10,18 +10,16 @@ import android.widget.ImageButton;
 import com.orm.SugarContext;
 import com.orm.SugarDb;
 
-import org.arshef.finalproject.DatabaseInitializer;
+import org.arshef.finalproject.Tools.DatabaseInitializer;
 import org.arshef.finalproject.Models.News;
 import org.arshef.finalproject.Models.Rating;
 import org.arshef.finalproject.Models.Suggestion;
 import org.arshef.finalproject.Models.User;
 import org.arshef.finalproject.R;
-import org.arshef.finalproject.Tools.StaticTools;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 
 import Jama.Matrix;
@@ -40,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(!LoginActivity.isLoggedIn){
+            Intent myintent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(myintent);
+        }
+
         setContentView(R.layout.activity_main);
         newsBtn = findViewById(R.id.news_btn);
         transferBtn = findViewById(R.id.transfer_btn);
