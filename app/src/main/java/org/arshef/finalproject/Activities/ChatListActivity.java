@@ -1,6 +1,5 @@
 package org.arshef.finalproject.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import org.arshef.finalproject.Models.Chat;
-import org.arshef.finalproject.Models.ChattingDataAdapter;
 import org.arshef.finalproject.Models.ChattingListDataAdapter;
 import org.arshef.finalproject.Models.User;
 import org.arshef.finalproject.R;
@@ -66,8 +63,8 @@ public class ChatListActivity extends AppCompatActivity {
 //            ChattingDataAdapter dataAdapter = new ChattingDataAdapter(this, R.layout.chatting, self.getStrings());
 //            listView.setAdapter(dataAdapter);
 //        }
-        Button sendBtn = findViewById(R.id.sendBtnList);
-        sendBtn.setOnClickListener(new View.OnClickListener() {
+        Button sndBtn = findViewById(R.id.sndBtn);
+        sndBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String s = msgText.getText().toString();
