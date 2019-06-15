@@ -9,8 +9,24 @@ public class Sim extends SugarRecord {
     public Sim() {
     }
 
-    public Sim(String number) {
+    public Sim(String number, int money) {
         this.number = number;
-        money = 0;
+        this.money = money;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 }

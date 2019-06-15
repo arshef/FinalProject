@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad">
+
+
+
+    <EditText
+        android:id="@+id/sharjamount"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Amount"
+        android:inputType="number"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/simnum"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Phone number"
+        android:inputType="number"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sharjamount" />
+
+
+    <EditText
+
+        android:id="@+id/simaccpass"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simaccnum" />
+
+    <EditText
+        android:id="@+id/simaccnum"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="95dp"
+        android:ems="10"
+        android:hint="Bank account"
+        android:inputType="number"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simnum" />
+
+
+    <Button
+        android:id="@+id/confirmsim"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/goldenrod"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="@+id/simaccpass"
+        app:layout_constraintStart_toStartOf="@+id/simaccpass"
+        app:layout_constraintTop_toBottomOf="@+id/simaccpass" />
+
+</android.support.constraint.ConstraintLayout>
