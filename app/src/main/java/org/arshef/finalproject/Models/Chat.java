@@ -3,6 +3,7 @@ package org.arshef.finalproject.Models;
 import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Chat extends SugarRecord {
@@ -13,11 +14,13 @@ public class Chat extends SugarRecord {
     User BUser;
 
     public Chat() {
+        strings = new ArrayList<>();
     }
 
     public Chat(User AUser, User BUser) {
         this.AUser = AUser;
         this.BUser = BUser;
+        strings = new ArrayList<>();
     }
 
     public List<SingleChat> getStrings() {

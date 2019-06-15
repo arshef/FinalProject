@@ -10,6 +10,12 @@ public class Rating extends SugarRecord {
     public Rating() {
     }
 
+    public Rating(User user, News news, int rate) {
+        this.news = news;
+        this.rate = rate;
+        this.user = user;
+    }
+
     public News getNews() {
         return news;
     }
