@@ -39,6 +39,7 @@ public class BillActivity extends AppCompatActivity {
                         List<BankAccount> bankAccountList = BankAccount.listAll(BankAccount.class);
                         BankAccount destinationAcc = null;
                         for (BankAccount account : bankAccountList) {
+                        }
                     }
                 }
             }
