@@ -46,12 +46,12 @@ public class DatabaseInitializer {
     }
 
     public static void billdb(){
-        Bill bill1 = new Bill(1);
-        Bill bill2 = new Bill(2);
-        Bill bill3 = new Bill(3);
-        Bill bill4 = new Bill(4);
-        Bill bill5 = new Bill(5);
-        Bill bill6 = new Bill(6);
+        Bill bill1 = new Bill(1, 100);
+        Bill bill2 = new Bill(2, 200);
+        Bill bill3 = new Bill(3, 300);
+        Bill bill4 = new Bill(4, 400);
+        Bill bill5 = new Bill(5, 500);
+        Bill bill6 = new Bill(6, 600);
         bill1.save();
         bill2.save();
         bill3.save();

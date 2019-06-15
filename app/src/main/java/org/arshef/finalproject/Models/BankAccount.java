@@ -3,9 +3,9 @@ package org.arshef.finalproject.Models;
 import com.orm.SugarRecord;
 
 public class BankAccount extends SugarRecord {
-    private int money;
-    private String cardNumber;
-    private String password;
+    int money;
+    String cardNumber;
+    String password;
 
     public BankAccount() {
     }

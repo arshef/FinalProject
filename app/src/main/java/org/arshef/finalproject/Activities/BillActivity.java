@@ -11,6 +11,7 @@ import android.widget.EditText;
 import org.arshef.finalproject.Models.BankAccount;
 import org.arshef.finalproject.Models.Bill;
 import org.arshef.finalproject.R;
+import org.arshef.finalproject.Tools.StaticTools;
 
 import java.util.List;
 
@@ -33,14 +34,40 @@ public class BillActivity extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<Bill> billList = Bill.listAll(Bill.class);
-                for (Bill bill : billList) {
-                    if(bill.getBill_id() == Integer.parseInt(Serial.getText().toString())) {
-                        List<BankAccount> bankAccountList = BankAccount.listAll(BankAccount.class);
-                        BankAccount destinationAcc = null;
-                        for (BankAccount account : bankAccountList) {
+                BankAccount myaccount = null;
+                List<BankAccount> bankaccList = BankAccount.listAll(BankAccount.class);
+                for (BankAccount account : bankaccList) {
+                    if (account.getCardNumber().equals(Accnum.getText().toString())) {
+                        if (account.getPassword().equals(Accpass.getText().toString())) {
+                            myaccount = BankAccount.findById(BankAccount.class, account.getId());
                         }
                     }
+                }
+
+                if (myaccount == null) {
+                    StaticTools.ToastMaker(BillActivity.this, "Unavailable bank account!");
+                } else {
+                    List<Bill> billList = Bill.listAll(Bill.class);
+                    for (Bill bill : billList) {
+                        if (bill.getCode() == Integer.parseInt(Serial.getText().toString())) {
+                            if(bill.getMoney() == 0){
+                                StaticTools.ToastMaker(BillActivity.this, "Bill is already paid!");
+                            }
+                            else if (myaccount.getMoney() < bill.getMoney()) {
+                                StaticTools.ToastMaker(BillActivity.this, "Insufficient funds!");
+                            }
+                            else{
+                                myaccount.setMoney(myaccount.getMoney() - bill.getMoney());
+                                bill.setMoney(0);
+                                myaccount.save();
+                                bill.save();
+                                Intent intent = new Intent(BillActivity.this, MainActivity.class);
+                                was_successful = true;
+                                startActivity(intent);
+                            }
+                        }
+                    }
+                    StaticTools.ToastMaker(BillActivity.this, "Bill not found!");
                 }
             }
         });
