@@ -6,6 +6,7 @@ public class BankAccount extends SugarRecord {
     int money;
     String cardNumber;
     String password;
+
     public BankAccount() {
     }
 
