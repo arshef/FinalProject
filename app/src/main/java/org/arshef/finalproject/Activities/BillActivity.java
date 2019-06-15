@@ -21,6 +21,7 @@ public class BillActivity extends AppCompatActivity {
 
     EditText Serial, Accnum, Accpass;
     Button confirmBtn;
+    Boolean b = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,11 +64,13 @@ public class BillActivity extends AppCompatActivity {
                                 bill.save();
                                 Intent intent = new Intent(BillActivity.this, MainActivity.class);
                                 was_successful = true;
+                                b = true;
                                 startActivity(intent);
                             }
                         }
                     }
-                    StaticTools.ToastMaker(BillActivity.this, "Bill not found!");
+                    if(!b)
+                        StaticTools.ToastMaker(BillActivity.this, "Bill not found!");
                 }
             }
         });

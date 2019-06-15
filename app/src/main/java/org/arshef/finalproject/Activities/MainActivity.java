@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             StaticTools.ToastMaker(MainActivity.this, "Transaction successful!");
         }
 
+        if(BillActivity.was_successful) {
+            BillActivity.was_successful = false;
+            StaticTools.ToastMaker(MainActivity.this, "Transaction successful!");
+        }
+
         setContentView(R.layout.activity_main);
         newsBtn = findViewById(R.id.news_btn);
         transferBtn = findViewById(R.id.transfer_btn);
