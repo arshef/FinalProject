@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(TransferActivity.was_successful) {
+            TransferActivity.was_successful = false;
             StaticTools.ToastMaker(MainActivity.this, "Transaction successful!");
         }
 

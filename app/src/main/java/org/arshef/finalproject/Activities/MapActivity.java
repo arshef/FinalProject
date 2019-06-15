@@ -60,6 +60,20 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
     }
 
+    private void addMarker() {
+        Random rand = new Random();
+        int n = rand.nextInt(99);
+        String s = String.format("35.%s", String.valueOf(n));
+        double v = Double.parseDouble(s);
+        n = rand.nextInt(99);
+        s = String.format("35.%s", String.valueOf(n));
+        double v1 = Double.parseDouble(s);
+        LatLng latLng = new LatLng(v, v1);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        mMap.addMarker(markerOptions);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         if (requestCode == PERMISSION_REQUEST_CODE) {
