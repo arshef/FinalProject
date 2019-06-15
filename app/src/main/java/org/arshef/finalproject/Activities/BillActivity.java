@@ -52,9 +52,11 @@ public class BillActivity extends AppCompatActivity {
                     for (Bill bill : billList) {
                         if (bill.getCode() == Integer.parseInt(Serial.getText().toString())) {
                             if(bill.getMoney() == 0){
+                                b = true;
                                 StaticTools.ToastMaker(BillActivity.this, "Bill is already paid!");
                             }
                             else if (myaccount.getMoney() < bill.getMoney()) {
+                                b = true;
                                 StaticTools.ToastMaker(BillActivity.this, "Insufficient funds!");
                             }
                             else{
