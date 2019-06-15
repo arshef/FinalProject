@@ -8,4 +8,9 @@ public class News extends SugarRecord {
 
     public News() {
     }
+
+    public News(String title, String text) {
+        this.title = title;
+        this.text = text;
+    }
 }
