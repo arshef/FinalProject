@@ -46,10 +46,21 @@ public class Chat extends SugarRecord {
         String temp = "";
         for (SingleChat s :
                 strings) {
-            String string = String.format("%s**%s", s.user.Username, s.message);
+            String string = String.format("%s&s", s.user.Username, s.message);
             temp = string + temp + "/";
         }
         storedStrings = temp;
         Chat.save(this);
+    }
+
+    public void initChat() {
+        Chat chat = Chat.findById(Chat.class, this.getId());
+        String[] strings = chat.storedStrings.split("/");
+        this.strings = new ArrayList<>();
+        for (String s : strings) {
+            String[] multi = s.split("&");
+            SingleChat singleChat = new SingleChat(StaticTools.findUserByUsername(multi[0]), multi[1]);
+            this.strings.add(singleChat);
+        }
     }
 }

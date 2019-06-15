@@ -31,13 +31,13 @@ public class StaticTools {
         return null;
     }
 
-    public static boolean checkChats(User userA, User userB) {
+    public static Chat checkChats(User userA, User userB) {
         List<Chat> chats = Chat.listAll(Chat.class);
         for (Chat c :
                 chats) {
             if (c.getAUser().equals(userA)&&c.getBUser().equals(userB))
-                return true;
+                return c;
         }
-        return false;
+        return null;
     }
 }
