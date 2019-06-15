@@ -44,19 +44,12 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String message = msgTxt.getText().toString();
-                if (self != null)
-                    addChats(userA, userB, message);
-                else
-                    newChat(userA, userB, message);
+                addChats(userA, userB, message);
             }
         });
     }
 
-    private void newChat(User userA, User userB, String message) {
-        Chat chat = new Chat(userA, userB);
-        chat.addMessage(LoginActivity.user, message);
-        chat.save();
-    }
+
 
     private void addChats(User userA, User userB, String message) {
         Chat chat = checkChats(userA, userB);

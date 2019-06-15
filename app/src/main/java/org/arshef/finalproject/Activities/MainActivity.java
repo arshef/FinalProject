@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import com.orm.SugarContext;
 import com.orm.SugarDb;
 
+import org.arshef.finalproject.Models.ChattingListDataAdapter;
 import org.arshef.finalproject.Tools.DatabaseInitializer;
 import org.arshef.finalproject.Models.News;
 import org.arshef.finalproject.Models.Rating;
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         chatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ChattingActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChatListActivity.class);
                 startActivity(intent);
             }
         });
