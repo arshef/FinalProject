@@ -1,6 +1,7 @@
 package org.arshef.finalproject.Tools;
 
 import org.arshef.finalproject.Models.BankAccount;
+import org.arshef.finalproject.Models.Bill;
 import org.arshef.finalproject.Models.Sim;
 
 public class DatabaseInitializer {
@@ -10,6 +11,7 @@ public class DatabaseInitializer {
     public static void init(){
         bankaccdb();
         simdb();
+        billdb();
         dbexists = true;
     }
 
@@ -41,5 +43,20 @@ public class DatabaseInitializer {
         sim4.save();
         sim5.save();
         sim6.save();
+    }
+
+    public static void billdb(){
+        Bill bill1 = new Bill(1);
+        Bill bill2 = new Bill(2);
+        Bill bill3 = new Bill(3);
+        Bill bill4 = new Bill(4);
+        Bill bill5 = new Bill(5);
+        Bill bill6 = new Bill(6);
+        bill1.save();
+        bill2.save();
+        bill3.save();
+        bill4.save();
+        bill5.save();
+        bill6.save();
     }
 }
