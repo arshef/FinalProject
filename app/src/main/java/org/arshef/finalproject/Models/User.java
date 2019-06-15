@@ -12,6 +12,10 @@ public class User extends SugarRecord {
     @NotNull
     String Password;
 
+    public User(){
+
+    }
+
     public String getUsername() {
         return Username;
     }

@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import com.orm.SugarContext;
 import com.orm.SugarDb;
 
+import org.arshef.finalproject.DatabaseInitializer;
 import org.arshef.finalproject.Models.News;
 import org.arshef.finalproject.Models.Rating;
 import org.arshef.finalproject.Models.Suggestion;
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         SugarDb db = new SugarDb(this);
         db.onCreate(db.getDB());
         test();
+
+        if(!DatabaseInitializer.dbexists){
+            DatabaseInitializer.init();
+        }
 
         newsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
